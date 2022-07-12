@@ -5,19 +5,23 @@
     height:56px;
     background-color: var(--primaryColor);
     color: var(--textOnDark);
+}
+.headerInnerContent {
+    max-width: 1440px;
+    margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding:0 var(--padding);
     gap:12px;
 }
-.header > div {
+.headerInnerContent  > div {
     display: flex;
     gap:var(--padding);
     align-items: center;
     flex:1;
 }
-.header > div:last-child {
+.headerInnerContent  > div:last-child {
     justify-content: flex-end;
 }
 .logo {
