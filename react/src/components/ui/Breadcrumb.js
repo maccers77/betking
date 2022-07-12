@@ -7,10 +7,10 @@ function Breadcrumb() {
       <ul>
         <li>
           <Link to={"/"}>
-            <span class="material-icons-round">arrow_back</span>
+            <span className="material-icons-round">arrow_back</span>
           </Link>
         </li>
-        <li data-page-url="/" class="">
+        <li data-page-url="/">
           Home
         </li>
         <li>Football</li>
