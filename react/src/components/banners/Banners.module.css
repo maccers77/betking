@@ -1,0 +1,107 @@
+.banners {
+    position: relative;
+    margin: auto;
+    height: 140px;
+    z-index: 0;
+    border-radius: 8px 8px 0 0;
+    overflow: hidden;
+    width: 100%;
+}
+.banner {
+    position: absolute;
+    width: 100%;
+    opacity: 1;
+    z-index: 1;
+    height: 100%;
+    transition: opacity 0s .5s;
+}
+.slideInner {
+    background-color: #ccc;
+    height: 140px;
+    height: 100%;
+    color: #fff;
+    padding: 18px 48px 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.cyanGradientDarkToLight {
+    background: linear-gradient(148deg, rgba(0,16,65,1) 0%, rgba(31,79,116,1) 60%, rgba(116,249,253,1) 100%);
+}
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: calc(50% - 12px);
+    transition: 0.6s ease;
+    user-select: none;
+    z-index: 2;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    background-color: rgba(255,255,255,.32);
+}
+.prev {
+    left: 12px;
+}
+.next {
+    right: 12px;
+}
+.prev span,
+.next span {
+    color: rgba(0, 16, 65, 0.54);
+}
+
+.teams {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid rgba(255,255,255,.2);
+}
+.team {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 12px;
+    text-transform: uppercase;
+}
+.jerseyContainer {
+    position: relative;
+    height: 41px;
+}
+.jerseyContainer::after {
+    content: '';
+    width: 75%;
+    height: 75%;
+    border-radius: 50%;
+    background-color: #fff;
+    position: absolute;
+    top: 5.5%;
+    left: 12.5%;
+    background: radial-gradient(81.73% 87.6% at 25% 25.04%, #001041 0%, #1F4F74 48.44%, #74F9FD 100%);
+}
+
+.market {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: var(--padding);
+}
+.selection {
+    font-size: 11px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.selection button {
+    background-color: rgba(227, 241, 253, .2);
+    border-color: rgba(227, 241, 253, 0);
+    color: #fff;
+    height: 34px;
+    padding:0 var(--padding);
+    border-radius: var(--radius);
+}

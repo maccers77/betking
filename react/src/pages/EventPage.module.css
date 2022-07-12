@@ -1,0 +1,92 @@
+.eventContainer {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+    /* max-width:400px; */
+    background-color: #EBECF0;
+    border-radius: var(--radius) var(--radius) 0 0;
+}
+
+.event {
+    background-color: #fff;
+    border-radius: var(--radius);
+    flex: 1 0 100%;
+    box-shadow: var(--elevation--z1);
+    width: 100%;
+    position: relative;
+}
+.eventHeader {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: var(--padding);
+}
+.date {
+    font-size: 11px;
+    color: var(--textSecondary);
+}
+.teams {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: var(--padding);
+}
+.eventHeader .team {
+    font-size: 20px;
+    font-weight: 500;
+}
+.markets {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--padding);
+    padding: var(--padding);
+    width: 100%;
+    align-content: flex-start;
+    flex-direction: column;
+    background-color: #F5F5F7;
+    border-radius: 0 0 8px 8px;
+}
+.market {
+    width:100%;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    align-self: flex-start;
+}
+.marketHeader {
+    color: #666D81;
+    font-size: 14px;
+    padding: var(--padding) var(--padding) 0;
+}
+.selections {
+    display: flex;
+    gap: var(--padding);
+    justify-content: space-between;
+    margin-bottom: var(--padding);
+    padding: 0 var(--padding);
+    align-items: end;
+    max-width:876px;
+    overflow-x: auto;
+}
+.selectionContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 6px;
+    flex: 1;
+    font-size: 12px;
+    color: #666D81;
+}
+.selectionContainer button {
+    flex: 0 0 44px;
+    width: 100%;
+}
+.marketGroups {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 12px;
+    align-items: center;
+}

@@ -1,0 +1,132 @@
+.input {
+    max-height: 100%;
+    border-radius: 8px 8px 0 0;
+    background-color: #F0F1F4;
+    border-bottom: 1px solid #ccc;
+    display: flex;
+    gap:10px;
+    align-items: center;
+    height: 55px;
+    position: relative;
+    padding:0px var(--padding);
+    transition: var(--animation--normal);
+}
+.currency,
+.small {
+    height:40px;
+    border-radius: 8px 8px 8px 8px;
+    border: 1px solid #ccc;
+}
+.input::after {
+    content: '';
+    background-color: var(--actionState);
+    height:2px;
+    width:0%;
+    left:50%;
+    transform: translate(-50%);
+    display: block;
+    position:absolute;
+    bottom:-1px;
+
+    transition: var(--animation--normal);
+}
+.input:focus-within::after {
+    width: 100%;
+}
+.currency.input:focus-within,
+.small.input:focus-within {
+    border: 1px solid var(--actionState);
+}
+.currency.input:focus-within::after,
+.small.input:focus-within::after {
+    width:0%;
+}
+.input.onDark {
+    background-color: rgba(255,255,255,.25);
+}
+.input input {
+    position: relative;
+    top:8px;
+    width:100%;
+    height:calc(100% - 8px);
+    font-size:15px;
+    background-color: transparent;
+    border:0px solid transparent;
+    outline: none;
+}
+.currency.input input {
+    height:calc(100% - 0px);
+    top:0px;
+    text-align: right;;
+}
+.input input::placeholder {
+    font-style: italic;
+    color:#000;
+    opacity: 0;
+
+    transition: var(--animation--normal);
+}
+.input label {
+    pointer-events: none;
+    position:absolute;
+    color:#999;
+    font-size: 14px;
+    height:100%;
+    top:0px;
+    display: flex;
+    align-items: center;
+    
+    transition: var(--animation--normal);
+}
+
+.input select {
+    margin-top: 16px;
+    background-color: transparent;
+    border: none;
+    opacity: 0;
+
+    transition: var(--animation--normal);
+}
+.input:focus-within select {
+    opacity: 1;
+    transition: var(--animation--normal) var(--animation--normal);
+}
+.input:focus-within label {
+    height: 35px;
+    font-size: 12px;
+    color: var(--actionState);
+}
+.currency.input:focus-within label {
+    height: 20px;
+}
+.input:focus-within input::placeholder {
+    opacity: .4;
+    transition: var(--animation--normal) var(--animation--normal);
+}
+.input:focus-within .currencySymbol {
+    color: var(--actionState);
+}
+
+.currency.input input::placeholder { 
+    opacity: .4;
+}
+.input input:not(:placeholder-shown) + select {
+    opacity: 1;
+}
+.input input:not(:placeholder-shown) + label {
+    height: 35px;
+    font-size: 12px;
+}
+.currency.input input:not(:placeholder-shown) + label {
+    height: 20px;
+    font-size: 12px;
+}
+.hasIcon label {
+    left:46px;
+}
+
+.currencySymbol {
+    color:#999;
+
+    transition: var(--animation--normal);
+}

@@ -1,0 +1,28 @@
+.alert {
+    background-color: rgb(253, 237, 237);
+    color: rgb(95, 33, 32);
+    padding:0 var(--padding) 0;
+    display: flex;
+    align-items: center;
+    gap:var(--padding);
+    font-size: 12px;
+    border-radius: var(--radiusLarge) var(--radiusLarge) 0 0;
+    margin-bottom: 0px;
+    height:0px;
+    overflow: hidden;
+
+    transition: var(--animation--normal);
+}
+.show {
+    height: 60px;
+    padding:var(--padding) var(--padding) calc(var(--padding) + var(--radiusLarge));
+    margin-bottom: calc(0px - var(--radiusLarge));
+    
+}
+.alert span {
+    color: rgb(239, 83, 80);
+    opacity: 0;
+}
+.show span {
+    opacity: 1;
+}

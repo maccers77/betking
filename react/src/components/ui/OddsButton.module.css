@@ -1,0 +1,58 @@
+.odds {
+    border-radius: var(--radius);
+    background-color: #E3F1FD;
+    border:1px solid #E3F1FD;
+    color: #2562BD;
+    height:44px;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    position: relative;
+    font-size:14px;
+    letter-spacing: 0.4px;
+    width: var(--selectionWidth);
+    font-family: var(--fontFamily);
+    text-transform: uppercase;
+    font-weight: 500;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    transition: var(--animation--normal);
+}
+.was {
+    font-size: 10px;
+    text-decoration: line-through;
+    color: #00104166;
+}
+.boost::after {
+    content: '';
+    position: absolute;
+    background-color: var(--value);
+    border-radius: 10px;
+    width: 16px;
+    height: 16px;
+    top: -4px;
+    left: -4px;
+    background-image: var(--boost);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: 7px;
+    box-shadow: var(--elevation--z2);
+}
+.disabled {
+    opacity: .5;
+}
+.selected {
+    background-color: #001041;
+    color:#fff;
+}
+.selected.boost {
+    background-color: var(--value) !important;
+    color:#001041 !important;
+    border:1px solid var(--value);
+  }
+
+  .noMatch {
+    opacity:.2;
+  }

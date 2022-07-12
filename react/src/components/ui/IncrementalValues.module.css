@@ -1,0 +1,16 @@
+.incrementalValues {
+    display:flex;
+    gap:var(--padding);
+    /* background-color: #f9f9f9;
+    border-radius: var(--radius) 0 0 var(--radius);
+    padding:0 var(--padding);
+    height:40px; */
+}
+.incrementalValues button {
+    background-color: transparent;
+    border:0px solid #fff;
+    color:var(--clickColor);
+    font-weight: 500;
+
+    padding: 0 calc(var(--padding) / 4);
+}

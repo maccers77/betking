@@ -1,0 +1,111 @@
+.tabs {
+    display: flex;
+    list-style: none;
+    justify-content: space-around;
+    /* margin-bottom: var(--padding); */
+    position: relative;
+    border-bottom:1px solid #eee;
+}
+.tabs li {
+    padding: 12px 24px;
+    color: #666D81;
+    height: 48px;
+    white-space: nowrap;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    gap: calc(var(--padding) / 2);
+    font-size:13px;
+    position: relative;
+    flex: 1;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+    transition: var(--animation--normal);
+}
+.tabs li::after {
+    content: '';
+    /* background-color: var(--actionState); */
+    height: 2px;
+    width: 0%;
+    left: 50%;
+    transform: translate(-50%);
+    display: block;
+    position: absolute;
+    bottom: 0px;
+
+    transition: var(--animation--normal);
+}
+.tabs li.selected {
+    color: var(--actionState);
+}
+.tabs li.selected::after {
+    width: 100% !important;
+}
+.new {
+    background-color: #C00;
+    color: #fff;
+    padding: 1px 4px;
+    border-radius: 15px;
+    top: -3px;
+    right: -4px;
+    font-size: 9px;
+    margin-left: 0px;
+    text-transform: uppercase;
+}
+.selector {
+    display: inline-block;
+    position: absolute;
+    height:2px;
+    background-color: var(--actionState);
+    width:0%;
+    bottom:0px;
+
+    transition: var(--animation--normal);
+}
+
+.tabs.grouped {
+    display: inline-flex;
+    gap: 1px;
+    justify-content: center;
+    border-bottom: 0px solid #fff;
+    margin-bottom:0px;
+}
+.tabs.grouped li {
+    /* color: #6C7592; */
+    background-color: #EBECF0;
+    padding: 4px 12px 4px 6px;
+    border-radius: 0px;
+    font-weight: 400;
+    letter-spacing: 0.46px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+}
+.tabs.grouped li:last-child {
+    border-radius: 0 40px 40px 0;
+}
+.tabs.grouped li:first-child {
+    border-radius: 40px 0 0 40px;
+}
+.tabs.grouped .selected {
+    color:#fff;
+    background-color: var(--primaryColor);
+}
+.tabs.grouped span {
+    color: #6C7592;
+    
+    transition: var(--animation--normal);
+}
+.tabs.grouped .selected span {
+    color:#fff;
+}

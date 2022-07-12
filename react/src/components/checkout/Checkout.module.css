@@ -1,0 +1,131 @@
+.checkout {
+    position: fixed;
+    bottom:0px;
+    background-color: #fff;
+    border-radius: var(--radiusLarge) var(--radiusLarge) 0 0;
+    box-shadow: var(--elevation--z18);
+    right:0px;
+    width:100%;
+    max-height:calc(100% - var(--headerHeight));
+    overflow: hidden;
+    display:flex;
+    flex-direction: column;
+    z-index: 100;
+
+    transition: var(--animation--normal);
+}
+
+.checkout .header {
+    padding:0 var(--padding);
+    height:56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex: 0 0 56px;
+    background-color: var(--surface);
+    box-shadow: var(--elevation--z4);
+    position: relative;
+    z-index:1;
+}
+.checkout .header > div {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.totals {
+    background-color: var(--surface);
+    border-radius: var(--radiusLarge) var(--radiusLarge) 0 0;
+    box-shadow: var(--elevation--z4);
+    overflow: hidden;
+}
+.selections {
+    padding:var(--padding) var(--padding) 0;
+    display: flex;
+    flex-direction: column;
+    max-height: calc(100% - 600px) !important;
+    overflow-y: auto;
+    gap:var(--padding);
+
+    transition: var(--animation--normal);
+}
+.selections::-webkit-scrollbar {
+    width: 0px;
+}
+.actions {
+    margin:var(--padding);
+    display: flex;
+    gap:var(--padding);
+    justify-content: space-between;
+}
+.actions button {
+    flex:1;
+}
+.empty {
+    max-height: 0%;
+}
+.stakeContainer {
+    display: flex;
+    gap:var(--padding);
+    align-items: center;
+    border-radius: var(--radius);
+    background-color: #f9f9f9;
+    padding-left:var(--padding);
+    margin:var(--padding) var(--padding);
+}
+.winningsContainer {
+    display: flex;
+    align-items: center;
+    gap:var(--padding);
+    justify-content: space-between;
+    /* padding-top:var(--padding); */
+    /* padding-left:var(--padding); */
+    margin:var(--padding) var(--padding);
+}
+.winningsInnerContainer {
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+.winnings {
+    display: flex;
+    gap: 6px;
+    font-size: 20px;
+}
+.errorContainer {
+    padding:0 var(--padding) var(--padding);
+}
+
+
+.selectionError > div::before {
+    content:'';
+    position: absolute;
+    width:14px;
+    height:200%;
+    right:0px;
+    top:calc(100% - 2px);
+    top:0px;
+    border:1px solid transparent;
+    flex:0 0 14px;
+}
+.selectionError > div::after {
+    content:'';
+    position: relative;
+    width:14px;
+    height:50%;
+    top:50%;
+    border:2px solid transparent;
+    border-radius: 0 var(--radiusLarge) 0 0;
+    margin-left:-2px;
+    z-index: -1;
+    flex:0 0 14px;
+}
+
+@media (min-width: 800px) {
+    .checkout {
+        max-width: 320px;
+        right:var(--padding);
+    }
+}
