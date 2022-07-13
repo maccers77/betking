@@ -65,7 +65,11 @@
 
     transition: width .4s ease-out, height .4s ease-out, opacity .3s .1s ease-out;
 }
-
+.secondary {
+    background-color: rgba(255,255,255,.2);
+    box-shadow: none;
+    color:#fff;
+}
 
 .tertiary,
 .tertiaryOnDark {    

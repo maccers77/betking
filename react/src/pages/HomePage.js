@@ -7,6 +7,8 @@ import EventList from "../components/eventlist/Eventlist";
 import Tabs from "../components/ui/Tabs";
 import style from "./HomePage.module.css";
 import Banners from "../components/banners/Banners";
+import Nav from "../components/layout/Nav";
+import InnerLayout from "../components/layout/InnerLayout";
 
 function HomePage(props) {
   const [isLoading, setIsLoading] = useState(true);
@@ -91,7 +93,10 @@ function HomePage(props) {
   }
 
   return (
-    <section className="main">
+    <>
+    <Nav />
+    <InnerLayout>
+    <section >
       <Banners />
       <Tabs
         tabs={[{ name: "Trending" }, { name: "Today" }, { name: "Boosts" }]}
@@ -104,6 +109,8 @@ function HomePage(props) {
         checkoutselections={props.checkoutselections}
       />
     </section>
+    </InnerLayout>
+    </>
   );
 }
 

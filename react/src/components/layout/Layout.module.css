@@ -20,6 +20,7 @@
 .articleContainer article {
     background-color: #fff;
     border-radius: 8px;
+    overflow: hidden;
     flex: 1 0 100%;
     box-shadow: var(--shadow100);
     /* overflow: hidden; */

@@ -1,0 +1,99 @@
+.kingsLeague {
+  background: linear-gradient(0deg, #2662d9 1%, #121d73 100%);
+}
+.kingsLiga {
+  background: linear-gradient(0deg, #ffc400 1%, #aa6f09 100%);
+}
+.kingsItaliano {
+  background: linear-gradient(0deg, #269dd9 1%, #084191 100%);
+}
+.kingsBundliga {
+  background: linear-gradient(0deg, #e51c3e 1%, #930241 100%);
+}
+.progressRing {
+  width: 16px;
+  height: 16px;
+}
+.progressRing__track {
+  stroke: rgba(255, 255, 255, 0.15);
+}
+.progressRing__circle {
+  stroke: rgba(255, 255, 255, 0.5);
+  transition: stroke-dashoffset 0.35s;
+  transform: rotate(-90deg);
+  transform-origin: 50% 50%;
+}
+
+.gameIcon {
+  background-color: #ccc;
+  border-radius: var(--radius);
+  /* flex:0 1 25%; */
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+  color: #fff;
+  padding-left: var(--padding);
+  padding-right: calc(var(--padding) * 2);
+  position: relative;
+}
+.instant::before {
+  content: "";
+  z-index: 0;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  opacity: 0.1;
+  background: url("data:image/svg+xml,%3Csvg width='93' height='104' viewBox='0 0 93 104' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50.7273 51.9905L0 0H42.2727L93 51.9905L42.2727 104H0L50.7273 51.9905Z' fill='white'/%3E%3C/svg%3E%0A")
+      0 100% repeat-x,
+    url("data:image/svg+xml,%3Csvg width='93' height='104' viewBox='0 0 93 104' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50.7273 51.9905L0 0H42.2727L93 51.9905L42.2727 104H0L50.7273 51.9905Z' fill='white'/%3E%3C/svg%3E%0A")
+      10px 100% repeat-x;
+}
+/* .live .progressRing {
+  display: none;
+} */
+.liveRing {
+  width:16px;
+  height:16px;
+  border:2px solid #fff;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.liveContainer,
+.progressContainer {
+    display:flex;
+    align-items: center;
+    gap:var(--padding);
+    font-size: 13px;
+}
+.liveContainer {
+    display: none;
+}
+.live .liveContainer {
+    display: flex;
+}
+.live .progressContainer {
+    display:none;
+}
+.live .liveRing::after {
+    content:'';
+    display: block;
+    background-color: #fff;
+    border-radius: 4px;
+    width:8px;
+    height:8px;
+    animation-name: pulse;
+    animation-duration: 1.6s;
+    animation-iteration-count: infinite;
+}
+@keyframes pulse {
+    0% {opacity: .4;transform: scale(.6);}
+    90% {opacity: 1;transform: scale(1);}
+    100% {opacity: .4;transform: scale(.6);}
+}

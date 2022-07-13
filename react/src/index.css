@@ -55,6 +55,7 @@
   --clickColor: #2562BD;
 
   --fontFamily: "Roboto", sans-serif;
+  --fontFamilyIcons: 'Material Icons Round';
 
   --value: rgb(255, 196, 0);
   --valueBackground: rgba(255, 196, 100, .1);
@@ -110,6 +111,13 @@ body {
 }
 .label .material-icons-round {
   font-size:20px;
+}
+
+h2 {
+  font-size:18px;
+  font-weight: 500;
+  color:var(--primaryColor);
+  margin-bottom:calc(var(--padding) / 4)
 }
 
 h3 {

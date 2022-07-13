@@ -1,0 +1,22 @@
+.kingmaker {
+    background: linear-gradient(to bottom,#ffe6b3 14.02%,#fff7e5 27.04%,#ffe6b3 40.58%,#b88014 100%);
+}
+.duke {
+    background: linear-gradient(to bottom,#e5e5e5 22%,#fff 36%,#ececec 45%,#fff 56%,#a3a3a3 82%,#898a8c 100%);
+}
+.jackpotValue {
+    height: 36px;
+    line-height: 36px;
+    z-index: 2;
+    font-size: 36px;
+    font-weight: 700;
+    bottom: 9px;
+    padding-left: 3px;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color:transparent;
+    margin-top:var(--padding);
+}
+.jackpotValue span {
+    font-weight: 400;
+}
