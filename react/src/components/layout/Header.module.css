@@ -1,23 +1,26 @@
 .header {
+    background-color: #001041;
     position: sticky;
-    top:0px;
-    z-index: 20;
-    height:56px;
-    background-color: var(--primaryColor);
-    color: var(--textOnDark);
+    top: 0px;
+    z-index: 10;
 }
 .headerInnerContent {
+    position: relative;
+    min-height: 56px;
+    background-color: #001041;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    flex-wrap: wrap;
+    gap: 0px 12px;
+    width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding:0 var(--padding);
-    gap:12px;
 }
 .headerInnerContent  > div {
     display: flex;
-    gap:var(--padding);
+    gap:8PX;
     align-items: center;
     flex:1;
 }
@@ -57,9 +60,69 @@
     color: #fff;
     background-color: #293660;
 }
+.hamburgerMenu {
+    width: 48px;
+    height: 48px;
+    align-items: center;
+    justify-content: center;
+    display:none;
+    color:#fff;
+}
 
-@media (min-width: 800px) {
+.header .headerInnerContent .right,
+.header .headerInnerContent .left {
+    z-index: 2;
+    height: 56px;
+}
+.header .headerInnerContent .right {
+    padding: 10px 12px 10px 0;
+}
+.header .headerInnerContent .left {
+    padding-left: 18px;
+}
+
+
+@media all and (max-width: 1279px) {
     .hamburgerMenu {
-        display: none;
+        display: flex;
+    }
+    .header {
+        position: relative;
+        top: 0px;
+        z-index: 3;
+    }
+    .header::after {
+        content:'';
+        display: block;
+        background-color: var(--primaryColor);
+        height:calc(var(--radius) * 2);
+        width:100%;
+        position: absolute;
+        z-index: -1;
+    }
+    .headerInnerContent {
+        padding-top: 52px;
+    }
+    .headerInnerContent .center {
+        order:2;
+        flex: 1 1 100%;
+        width: 100%;
+    }
+    .header .headerInnerContent .right, 
+    .header .headerInnerContent .left {
+        position: fixed;
+        top: 0px;
+        width: 50%;
+        z-index: 1;
+        background-color: #001041;
+    }
+    .header .headerInnerContent .left {
+        padding-left: 0px;
+    }
+    .header .headerInnerContent .right {
+        right: 0px;
+    }
+    .verticalNav {
+        justify-content: flex-start;
     }
 }

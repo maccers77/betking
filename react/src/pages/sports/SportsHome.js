@@ -2,15 +2,13 @@ import { useState, useEffect } from "react";
 
 import { ref, onValue } from "firebase/database";
 
-import db from "../components/firebase/Firebase";
-import EventList from "../components/eventlist/Eventlist";
-import Tabs from "../components/ui/Tabs";
-import style from "./HomePage.module.css";
-import Banners from "../components/banners/Banners";
-import Nav from "../components/layout/Nav";
-import InnerLayout from "../components/layout/InnerLayout";
+import db from "../../components/firebase/Firebase";
+import EventList from "../../components/eventlist/Eventlist";
+import Tabs from "../../components/ui/Tabs";
+import style from "./SportsHome.module.css";
+import Banners from "../../components/banners/Banners";
 
-function HomePage(props) {
+function SportsHome(props) {
   const [isLoading, setIsLoading] = useState(true);
   const [loadedEvents, setLoadedEvents] = useState([]);
   const [loadedHeadings, setLoadedHeadings] = useState([]);
@@ -86,32 +84,33 @@ function HomePage(props) {
 
   if (isLoading) {
     return (
-      <section>
+      <div className="loading">
         <p>Loading...</p>
-      </section>
+      </div>
     );
   }
 
+
+
   return (
     <>
-    <Nav />
-    <InnerLayout>
-    <section >
-      <Banners />
-      <Tabs
-        tabs={[{ name: "Trending" }, { name: "Today" }, { name: "Boosts" }]}
-        activeTab="Trending"
-      />
+      <article>
+        <section>
+          <Banners />
+          <Tabs
+            tabs={[{ name: "Trending" }, { name: "Today" }, { name: "Boosts" }]}
+            activeTab="Trending"
+          />
 
-      <EventList
-        sports={loadedEvents}
-        headings={loadedHeadings}
-        checkoutselections={props.checkoutselections}
-      />
-    </section>
-    </InnerLayout>
+          <EventList
+            sports={loadedEvents}
+            headings={loadedHeadings}
+            checkoutselections={props.checkoutselections}
+          />
+        </section>
+      </article>
     </>
   );
 }
 
-export default HomePage;
+export default SportsHome;

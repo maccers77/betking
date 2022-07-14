@@ -44,17 +44,16 @@ function VirtualsIcon(props) {
   }
 
   return (
-    <div className={`${style.gameIcon} ${style[props.game]} ${style[status]}`}>
+    <div className={`${style.gameIcon} ${style[props.game]} ${props.style} ${style[status]} ${style[props.variant]}`}>
       {props.text}
       <VirtualsLogo game={props.game} />
       <div>
         <div className={style.liveContainer}>
-          Live <div className={style.liveRing}></div>
+          <span>Live</span> <div className={style.liveRing}></div>
         </div>
 
         <div className={style.progressContainer}>
-          {minutes}:{seconds < 10 ? "0" : ""}
-          {seconds}
+          <span>{minutes}:{seconds < 10 ? "0" : ""}{seconds}</span>
           <svg className={style.progressRing} height="18" width="18">
             <circle
               className={style.progressRing__track}

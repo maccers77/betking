@@ -1,0 +1,78 @@
+.virtualTabs {
+  display: flex;
+  list-style: none;
+}
+.virtualTabs a {
+  flex: 1;
+}
+.virtualTabs a li > div {
+  border-radius: 0px;
+}
+
+.weekSelector {
+  padding: 3px 12px;
+  height: 44px;
+  box-shadow: 0px -3px 6px rgb(0 0 0 / 60%);
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  display: flex;
+  gap:var(--padding);
+  justify-content: center;
+  align-items: center;
+  background-color: #f3f3f3;
+}
+.weekSelector span {
+  color:#ffffffCC;
+}
+.weekSelector ul {
+    display: flex;
+    list-style: none;
+    gap:12px;
+}
+.weekSelector ul li {
+    font-size: 14px;
+    opacity: .8;
+    cursor: pointer;
+    padding: 6px 12px;
+    border-radius: 30px;
+}
+.weekSelector ul li.selected {
+    opacity: 1;
+    background-color: rgba(255,255,255,.2);
+}
+.kings-league {
+  background-color: #121d73;
+}
+.kings-liga {
+  background-color: #aa6f09;
+}
+.kings-italiano {
+  background-color: #084191;
+}
+.kings-bundliga {
+  background-color: #930241;
+}
+.active {
+  z-index: 100;
+  box-shadow: 0 -8px 8px rgba(0,0,0,.6);
+}
+
+.active li .kingsLeague {
+  background: linear-gradient(180deg, #2662d9 1%, #121d73 100%);
+}
+.active li .kingsLiga {
+  background: linear-gradient(180deg, #ffc400 1%, #aa6f09 100%);
+}
+.active li .kingsItaliano {
+  background: linear-gradient(180deg, #269dd9 1%, #084191 100%);
+}
+.active li .kingsBundliga {
+  background: linear-gradient(180deg, #e51c3e 1%, #930241 100%);
+}
+
+@media all and (max-width: 1023px) {
+  .virtualTabs {
+    gap:0px;
+  }
+}

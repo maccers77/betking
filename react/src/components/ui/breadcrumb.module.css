@@ -21,6 +21,11 @@
     gap: 6px;
     cursor: pointer;
 }
+.breadcrumb ul li a {
+    height:24px;
+    display: flex;
+    align-items: center;
+}
 .breadcrumb ul li span {
     padding-right: var(--padding);
 }
@@ -30,4 +35,17 @@
 .breadcrumb ul li:first-child:after,
 .breadcrumb ul li:last-child:after {
     display: none;
+}
+
+@media all and (max-width: 1023px) {
+    .breadcrumb {
+        margin-bottom: 0px;
+        height:44px;
+    }
+    .breadcrumb ul {
+        height:44px;
+    }
+    .breadcrumb ul li span {
+        padding-right: calc(var(--padding) / 2);
+    }
 }

@@ -1,14 +1,16 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import { useDispatch } from 'react-redux'
+import { toggleMenuState } from '../../features/menuStateSlice'
 
 import style from "./Header.module.css";
 import Button from "../ui/Button";
 import JoinButton from "../buttons/joinButton/JoinButton";
 import TextField from "../ui/TextField";
 import Modal from '../ui/modal/Modal';
-import Backdrop from '../ui/modal/Backdrop';
 
-function Header() {
+function Header(props) {
+  const dispatch = useDispatch();
   const [animate, setAnimate] = useState(false);
 
 
@@ -18,15 +20,17 @@ function Header() {
   function closeModalHandler() {
     setAnimate(false);
   }
-
+  function toggleMenu() {
+    dispatch(toggleMenuState())
+  }
 
 
   return (
     <>
     <header className={style.header}>
       <div className={style.headerInnerContent}>
-        <div>
-          <span className={[style.hamburgerMenu, "material-icons-round"].join(" ")} >
+        <div className={style.left}>
+          <span className={[style.hamburgerMenu, "material-icons-round"].join(" ")} onClick={toggleMenu}>
             menu
           </span>
           <svg width="88" height="32" viewBox="0 0 88 32" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -41,16 +45,17 @@ function Header() {
               <path d="M36.4609 21.7955V25.3105H34.3524C32.85 25.3105 31.6783 24.9432 30.8386 24.2077C29.9983 23.4722 29.5783 22.2722 29.5783 20.6077V15.2259H27.9303V11.801H29.5783V8.29309H33.7225V11.801H36.4369V15.2259H33.7225V20.6559C33.7225 21.0599 33.8194 21.3513 34.0131 21.5286C34.2072 21.7072 34.5302 21.7955 34.9827 21.7955H36.4609Z" fill="white"></path>
           </svg>
         </div>
-
-        <ul className={style.verticalNav}>
+        <div className={style.center}>
+        <ul className={`${style.verticalNav}`}>
           <NavLink className={(navData) => navData.isActive ? style.active : "" } to="/"><li>Sports</li></NavLink>
           <NavLink className={(navData) => navData.isActive ? style.active : "" } to="/jackpots"><li>Jackpots</li></NavLink>
           <NavLink className={(navData) => navData.isActive ? style.active : "" } to="/virtuals"><li>Virtuals</li></NavLink>
           <NavLink className={(navData) => navData.isActive ? style.active : "" } to="/casino"><li>Casino</li></NavLink>
           <NavLink className={(navData) => navData.isActive ? style.active : "" } to="/promos"><li>Promos</li></NavLink>
         </ul>
+        </div>
 
-        <div>
+        <div className={style.right}>
           <Button variant="tertiaryOnDark">Login</Button>
           <JoinButton onClick={showModalHandler} />
         </div> 

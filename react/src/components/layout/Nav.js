@@ -1,9 +1,21 @@
+import { useSelector, useDispatch } from 'react-redux'
+import { toggleMenuState } from '../../features/menuStateSlice'
+
 import style from "./Nav.module.css";
 import TextField from "../ui/TextField";
 
-function Nav() {
+
+function Nav(props) {
+  const dispatch = useDispatch()
+  const menuState = useSelector((state) => state.menuState.value)
+
+  function toggleMenu() {
+    dispatch(toggleMenuState())
+  }
+
   return (
-    <nav className={style.nav}>
+    <nav className={`${style.nav} ${style[menuState]}`}>
+      <div className={style.navContents}>
       <div className={style.searchContainer}>
         <TextField
           icon="search"
@@ -12,63 +24,27 @@ function Nav() {
           variant="small"
         />
       </div>
-      <ul>
-        <li>
-          <div className={style.listItem}>
-            <span className="material-icons-round">home</span>
-            <span className={style.text}>Sports Home</span>
-          </div>
-        </li>
-      </ul>
-      <span className={style.subHeading}>Farourites</span>
-      <ul>
-        <li>
-          <div className={style.listItem}>
-            <span className="material-icons-round">sports_soccer</span>
-            <span className={style.text}>Football</span>
-          </div>
-        </li>
-        <li>
-          <div className={style.listItem}>
-            <span className="material-icons-round">sports_basketball</span>
-            <span className={style.text}>Basketball</span>
-          </div>
-        </li>
-        <li>
-          <div className={style.listItem}>
-            <span className="material-icons-round">sports_tennis</span>
-            <span className={style.text}>Tennis</span>
-          </div>
-        </li>
-        <li>
-          <div className={style.listItem}>
-            <span className="material-icons-round">more_horiz</span>
-            <span className={style.text}>A-Z Sports</span>
-          </div>
-        </li>
-      </ul>
-
-      <span className={style.subHeading}>Toolbox</span>
-      <ul>
-        <li>
-          <div className={style.listItem}>
-            <span className="material-icons-round">format_list_bulleted</span>
-            <span className={style.text}>My Bets</span>
-          </div>
-        </li>
-        <li>
-          <div className={style.listItem}>
-            <span className="material-icons-round">qr_code</span>
-            <span className={style.text}>Enter Booking Code</span>
-          </div>
-        </li>
-        <li>
-          <div className={style.listItem}>
-            <span className="material-icons-round">checklist</span>
-            <span className={style.text}>Check Coupon</span>
-          </div>
-        </li>
-      </ul>
+      {props.navData.map((group) => (
+        <div key={group.key}>
+          {group.title ? (
+            <span className={style.subHeading}>{group.title}</span>
+          ) : (
+            ""
+          )}
+          <ul>
+            {group.items.map((item) => (
+              <li key={item.key}>
+                <div className={style.listItem}>
+                  <span className="material-icons-round">{item.icon}</span>
+                  <span className={style.text}>{item.name}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+      </div>
+      <div className={style.background} onClick={toggleMenu}></div>
     </nav>
   );
 }

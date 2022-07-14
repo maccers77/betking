@@ -45,6 +45,7 @@
 }
 .selected {
     background-color: #001041;
+    /* background-color: #2562BD; */
     color:#fff;
 }
 .selected.boost {

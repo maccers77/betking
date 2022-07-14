@@ -17,7 +17,7 @@ function JackpotTicker(props) {
   }
 
   return (
-    <div className={`${style[props.style]} ${style.jackpotValue}`}>
+    <div className={`${style[props.style]} ${style.jackpotValue} ticker`}>
       <span>{props.currency}</span> {numberWithCommas(counter)}
     </div>
   );

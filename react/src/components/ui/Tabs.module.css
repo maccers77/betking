@@ -109,3 +109,9 @@
 .tabs.grouped .selected span {
     color:#fff;
 }
+
+@media all and (max-width: 799px) {
+    .tabs.grouped .text {
+        display:none;
+    }
+}

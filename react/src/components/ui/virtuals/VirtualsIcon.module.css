@@ -10,6 +10,10 @@
 .kingsBundliga {
   background: linear-gradient(0deg, #e51c3e 1%, #930241 100%);
 }
+
+
+
+
 .progressRing {
   width: 16px;
   height: 16px;
@@ -27,8 +31,7 @@
 .gameIcon {
   background-color: #ccc;
   border-radius: var(--radius);
-  /* flex:0 1 25%; */
-  flex: 1;
+  width:100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -37,6 +40,7 @@
   padding-left: var(--padding);
   padding-right: calc(var(--padding) * 2);
   position: relative;
+  -webkit-tap-highlight-color: transparent;
 }
 .instant::before {
   content: "";
@@ -96,4 +100,25 @@
     0% {opacity: .4;transform: scale(.6);}
     90% {opacity: 1;transform: scale(1);}
     100% {opacity: .4;transform: scale(.6);}
+}
+
+@media all and (max-width: 799px) {
+  .gameIcon {
+    padding:0 var(--padding) 0 0;
+  }
+  .tab.gameIcon {
+    height:auto;
+    width:auto;
+    padding:0 0 0 0;
+    justify-content: center;
+  }
+  .tab.gameIcon span {
+    display:none;
+  }
+  .tab .liveContainer,
+  .tab .progressContainer {
+    position: absolute;
+    top:6px;
+    right:6px;
+  }
 }

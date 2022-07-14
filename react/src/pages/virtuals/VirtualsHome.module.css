@@ -2,8 +2,7 @@
     display:flex;
     flex-direction: column;
     align-items: center;
-    gap:var(--padding);
-    
+    /* gap:var(--padding); */
 }
 .virtualsLobby {
     background: linear-gradient(100deg,#001041 0%,#213775 100%);
@@ -13,50 +12,33 @@
     justify-content: space-evenly;
     width:100%;
     align-items: center;
-    padding:calc(var(--padding) * 1.5) var(--padding);
+    padding:var(--padding) var(--padding);
 }
 .jackpot {
     display: flex;
     flex-direction: column;
     align-items: center ;
     justify-content: center;
-    color:#fff;
-    flex: 1 1 35%;
+    font-size: 11px;
+    color:#ffffff99;
+    padding: calc(var(--padding) / 2) 0;
+}
+.jackpot > div:nth-child(2) {
+    margin-top: calc(var(--padding) / 2);
 }
 .supportingText {
-    flex:1 0 20%;
-    text-align: center;
-    color:#ffffffCC;
-    font-size: 13px;
-    display: flex;
-    gap:var(--padding);
-    align-items: center;
-}
-.supportingText::before,
-.supportingText::after {
-    content:'arrow_back';
-    font-family: var(--fontFamilyIcons);
-    font-size: 24px;
-}
-.supportingText::after {
-    content: 'arrow_forward';
-}
-.supportingText div div {
-    margin-bottom: calc(var(--padding) / 2);
     font-size:16px;
     font-weight: 500;
     color:#fff;
     text-transform: uppercase;
 }
 .winner {
-    margin-top: var(--padding);
+    margin-top: calc(var(--padding) / 2);
     font-size:12px;
-    color:#ffffff99;
 }
 .leagues {
     display: flex;
     gap:var(--padding);
-    /* justify-content: space-evenly; */
 }
 .leagueContainer {
     padding:calc(var(--padding) * 2);
@@ -72,8 +54,6 @@
     padding:0 0 var(--padding);
 }
 .jackpotGames {
-    /* background: rgb(244,246,254);
-background: linear-gradient(326deg, rgba(244,246,254,1) 0%, rgba(208,218,247,1) 100%); */
     background-color: #fff;
     border-radius: var(--radius) var(--radius) 0 0;
     padding:calc(var(--padding) * 1) 0;
@@ -83,4 +63,36 @@ background: linear-gradient(326deg, rgba(244,246,254,1) 0%, rgba(208,218,247,1) 
     background-color: #f3f3f3;
     border-radius: var(--radius) var(--radius) 0 0;
     margin-top: calc(0px - var(--radius));
+}
+.leagues a {
+    flex:1 1 25%;
+}
+
+@media all and (max-width: 799px) {
+    .jackpotGames {
+        padding:0 0;
+    }
+    .leagueContainer {
+        padding:var(--padding);
+    }
+    .jackpotsInner {
+        /* padding:calc(var(--padding) * 1) var(--padding); */
+        /* padding:var(--padding) 0; */
+        padding:calc(var(--padding) / 2) 0 var(--padding);
+        display: flex;
+        overflow: auto;
+        gap:0px;
+        scroll-snap-type: x mandatory;
+        justify-content: flex-start;
+    }
+    .jackpotsInner > div {
+        position: relative;
+        width: 100%;
+        scroll-snap-align: start;
+        flex-shrink: 0;
+        flex-grow: 1;
+    }
+    .leagues {
+        flex-wrap: wrap;
+    }
 }
