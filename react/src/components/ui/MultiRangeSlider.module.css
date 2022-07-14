@@ -1,99 +1,101 @@
 .sliderContainer {
-    height:36px;
+  height: 36px;
+  position: relative;
+  margin:0 40px;
 }
 
 .slider {
-    position: relative;
-    width: 200px;
-  }
-  
-  .slider__track,
-  .slider__range {
-    border-radius: 3px;
-    height: 5px;
-    position: absolute;
-  }
-  
-  .slider__track {
-    background-color: #EBECF0;
-    width: 100%;
-    z-index: 1;
-  }
-  
-  .slider__range {
-    background-color: var(--activeState);
-    z-index: 2;
-  }
-  
-  /* Removing the default appearance */
-  .thumb,
-  .thumb::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    -webkit-tap-highlight-color: transparent;
-  }
-  
-  .thumb {
-    pointer-events: none;
-    position: absolute;
-    height: 0;
-    width: 200px;
-    outline: none;
-  }
-  
-  .thumb--zindex-3 {
-    z-index: 3;
-  }
-  
-  .thumb--zindex-4 {
-    z-index: 4;
-  }
-  
-  /* For Chrome browsers */
-  .thumb::-webkit-slider-thumb {
-    background-color: #EBECF0;
-    background-color: var(--actionState);
-    border: none;
-    border-radius: 50%;
-    /* box-shadow: 0 0 1px 1px #ced4da; */
-    cursor: pointer;
-    height: 18px;
-    width: 18px;
-    margin-top: 4px;
-    pointer-events: all;
-    position: relative;
-  }
-  
-  /* For Firefox browsers */
-  .thumb::-moz-range-thumb {
-    background-color: #f1f5f7;
-    border: none;
-    border-radius: 50%;
-    box-shadow: 0 0 1px 1px #ced4da;
-    cursor: pointer;
-    height: 18px;
-    width: 18px;
-    margin-top: 4px;
-    pointer-events: all;
-    position: relative;
-  }
+  position: relative;
+  width: 100%;
+}
 
-  .text {
-    font-size:11px;
-    padding:0 0 calc(var(--padding) / 1.5);
-    text-align: center;
-    color:var(--textSecondary);
-  }
-  .min,
-  .max {
-    position:absolute;
-    padding:0 calc(var(--padding) / 2);
-    top:-4px;
-    font-size: 12px;
-    color:var(--textSecondary)
-  }
-  .min {
-    right: 100%;
-  }
-  .max {
-    left: 100%;
-  }
+.slider__track,
+.slider__range {
+  border-radius: 3px;
+  height: 5px;
+  position: absolute;
+}
+
+.slider__track {
+  background-color: #ebecf0;
+  width: 100%;
+  z-index: 1;
+}
+
+.slider__range {
+  background-color: var(--activeState);
+  z-index: 2;
+}
+
+/* Removing the default appearance */
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  width: 100%;
+  outline: none;
+}
+
+.thumb--zindex-3 {
+  z-index: 3;
+}
+
+.thumb--zindex-4 {
+  z-index: 4;
+}
+
+/* For Chrome browsers */
+.thumb::-webkit-slider-thumb {
+  background-color: #ebecf0;
+  background-color: var(--actionState);
+  border: none;
+  border-radius: 50%;
+  /* box-shadow: 0 0 1px 1px #ced4da; */
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+/* For Firefox browsers */
+.thumb::-moz-range-thumb {
+  background-color: #f1f5f7;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #ced4da;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+.text {
+  font-size: 11px;
+  padding: 0 0 calc(var(--padding) / 1.5);
+  text-align: center;
+  color: var(--textSecondary);
+}
+.min,
+.max {
+  position: absolute;
+  padding: 0 calc(var(--padding) / 2);
+  top: -4px;
+  font-size: 12px;
+  color: var(--textSecondary);
+}
+.min {
+  right: 100%;
+}
+.max {
+  left: 100%;
+}

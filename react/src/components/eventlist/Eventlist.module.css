@@ -67,6 +67,22 @@
   margin: var(--padding) 0;
 }
 
+.lessThan {
+  flex-basis: 280px;
+}
+
+@media all and (max-width: 1100px) {
+  .markets > div:first-child {
+    border-right: 0px solid #e3e3e3;
+  }
+  .markets > div:last-child {
+    display: none;
+  }
+  .markets > div:nth-last-child(2) {
+    display: none;
+  }
+}
+
 @media all and (max-width: 799px) {
   .lessThan {
     display: none;

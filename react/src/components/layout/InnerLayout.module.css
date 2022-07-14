@@ -1,5 +1,5 @@
 .main {
-    padding: 0px var(--padding) var(--padding) 0;
+    padding: 0px var(--padding) 0 0;
     display: flex;
     gap: var(--padding);
     flex: 1;
@@ -13,7 +13,7 @@
     /* background-color: #EBECF0; */
     border-radius: var(--radius) var(--radius) 0 0;
     margin-top: var(--padding);
-    margin-bottom: var(--padding);
+    /* margin-bottom: var(--padding); */
 }
 .articleContainer article {
     background-color: #fff;
@@ -25,11 +25,19 @@
     position: relative;
 }
 
+@media all and (max-width: 1279px) {
+    .articleContainer {
+        margin-left:var(--padding);
+    }
+}
 @media all and (max-width: 799px) {
     .main {
         padding: 0px 0px 0px 0;
+        background: rgb(0,16,65);
+        background: linear-gradient(180deg, rgba(0,16,65,1) 49%, rgba(0,16,65,0) 50%);
     }
     .articleContainer {
         margin-top:0px;
+        margin-left:0px;
     }
 }
