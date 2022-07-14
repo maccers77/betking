@@ -111,7 +111,16 @@
 }
 
 @media all and (max-width: 799px) {
-    .tabs.grouped .text {
+    .tabs.grouped li {
+        padding: 4px 8px 4px 8px;
+    }
+    .tabs.grouped li:first-child {
+        padding: 4px 8px 4px 10px;
+    }
+    .tabs.grouped li:last-child {
+        padding: 4px 10px 4px 8px;
+    }
+    .tabs.grouped li .text {
         display:none;
     }
 }
